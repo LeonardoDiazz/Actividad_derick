@@ -15,6 +15,7 @@ import mx.edu.utez.calculadoramvvm.ui.screens.MenuScreen
 import mx.edu.utez.calculadoramvvm.ui.screens.NamePreferenceScreen
 import mx.edu.utez.calculadoramvvm.ui.screens.PersonaScreen
 import mx.edu.utez.calculadoramvvm.ui.screens.RegisterScreen
+import mx.edu.utez.calculadoramvvm.ui.screens.SettingsScreen
 import mx.edu.utez.calculadoramvvm.ui.screens.TicTacToeScreen
 import mx.edu.utez.calculadoramvvm.ui.screens.UserScreen
 import mx.edu.utez.calculadoramvvm.viewmodel.CalculatorViewModel
@@ -29,7 +30,7 @@ import mx.edu.utez.gato.viewmodel.LoginViewModel
 fun Navigation() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "login") {
+    NavHost(navController = navController, startDestination = "setting") {
         composable("login") {
             val viewModel: LoginViewModel = viewModel() // instancia del ViewModel
             NamePreferenceScreen(viewModel = viewModel, navController = navController)
@@ -65,6 +66,9 @@ fun Navigation() {
     composable("verCajita"){
         CajitaDecolorScreen(navController)
     }
+        composable("setting"){
+            SettingsScreen()
+        }
 
 
         }
